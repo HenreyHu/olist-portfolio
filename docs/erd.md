@@ -3,9 +3,9 @@
 ```mermaid
 erDiagram
     stg_customers ||--|| stg_orders : "customer_id"
-    stg_orders ||--o{ stg_order_items : "order_id"
     stg_orders ||--o{ stg_order_payments : "order_id"
     stg_orders ||--o{ stg_order_reviews : "order_id"
+    stg_orders ||--o{ stg_order_items : "order_id"
     stg_products ||--|{ stg_order_items : "product_id"
     stg_sellers ||--|{ stg_order_items : "seller_id"
     stg_category_translation |o--|{ stg_products : "product_category_name"
