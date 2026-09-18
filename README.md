@@ -22,6 +22,6 @@ _TBD, see `data_issues_log`._
 ## Reproduce
 ```bash
 pip install -r requirements.txt
-python scripts/setup_data.py   # downloads the CSVs and builds data/olist.duckdb
+python scripts/setup_data.py   # downloads the CSVs (no Kaggle token needed) and builds data/olist.duckdb
 python scripts/profile.py      # writes docs/profiling.md
 ```
