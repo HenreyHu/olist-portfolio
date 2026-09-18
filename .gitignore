@@ -1,0 +1,18 @@
+# data (download locally, don't commit)
+data/*
+!data/raw/
+data/raw/*
+!data/raw/.gitkeep
+*.duckdb
+*.duckdb.wal
+
+# python
+__pycache__/
+.venv/
+.ipynb_checkpoints/
+
+# os / editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
