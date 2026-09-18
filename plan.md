@@ -21,11 +21,11 @@
 
 ## Week 1: Setup and exploration
 
-- [ ] 🤖 Create the repo structure (`data/raw`, `sql/`, `notebooks/`, `charts/`, `README.md`, `.gitignore` excluding `data/`)
-- [ ] 🤖 Download the 9 CSVs (needs a Kaggle API token in `~/.kaggle/kaggle.json`)
-- [ ] 🤖 Load the CSVs into staging tables (`stg_*`) and save the DDL as `sql/01_schema.sql`
-- [ ] 🤖 Profile every table (row counts, nulls per column, duplicate keys, min/max dates, unmatched foreign keys) → `docs/profiling.md`
-- [ ] 🤖 Draw a diagram of how the tables connect (Mermaid) → `docs/erd.md`
+- [x] 🤖 Create the repo structure (`data/raw`, `sql/`, `notebooks/`, `charts/`, `README.md`, `.gitignore` excluding `data/`)
+- [x] 🤖 Download the 9 CSVs (public download, no Kaggle token needed)
+- [x] 🤖 Load the CSVs into staging tables (`stg_*`) and save the load script as `sql/01_load_staging.sql`
+- [x] 🤖 Profile every table (row counts, nulls per column, duplicate keys, min/max dates, unmatched foreign keys) → `docs/profiling.md`
+- [x] 🤖 Draw a diagram of how the tables connect (Mermaid) → `docs/erd.md`
 - [ ] ✍️ Read the profiling output and note the 5–10 issues that look most important
 - [ ] ✍️ Write a draft data dictionary: what each table is for, its grain (what one row represents) and its keys
 - [ ] ✍️ Write a single-sentence problem statement at the top of the README

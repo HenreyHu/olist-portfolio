@@ -30,11 +30,11 @@ tables = [r[0] for r in con.execute(
 
 for t in tables:
     n = con.execute(f"SELECT COUNT(*) FROM {t}").fetchone()[0]
-    out.append(f"## {t}\n\nRows: **{n:,}**")
+    out.append(f"## {t}\n\n- Rows: **{n:,}**")
     if t in KEYS:
         k = KEYS[t]
         dup = con.execute(f"SELECT COUNT(*) FROM (SELECT {k} FROM {t} GROUP BY {k} HAVING COUNT(*) > 1)").fetchone()[0]
-        out.append(f"Duplicate keys on ({k}): **{dup:,}**")
+        out.append(f"- Duplicate keys on ({k}): **{dup:,}**")
     out.append("\n| column | type | nulls | null % | distinct | min | max |\n|---|---|---:|---:|---:|---|---|")
     for col, typ in con.execute(
         "SELECT column_name, data_type FROM information_schema.columns WHERE table_name = ? ORDER BY ordinal_position", [t]
