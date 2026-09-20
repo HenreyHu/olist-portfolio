@@ -8,10 +8,9 @@
 
 > Which product categories bring in the most revenue but lose the most to freight costs and late deliveries?
 
-**Supporting questions**
+**Supporting question**
 
-1. Does late delivery lower review scores?
-2. What share of customers are repeat buyers?
+Does late delivery lower review scores?
 
 **Stated limitation:** the dataset has no cost of goods. Freight as a % of price stands in for margin, and the write-up must say so.
 
@@ -28,7 +27,7 @@
 - [x] 🤖 Draw a diagram of how the tables connect (Mermaid) → `docs/erd.md`
 - [ ] ✍️ Read the profiling output and note the 5–10 issues that look most important
 - [ ] ✍️ Write a draft data dictionary: what each table is for, its grain (what one row represents) and its keys
-- [ ] ✍️ Write a single-sentence problem statement at the top of the README
+- [x] ✍️ Write a single-sentence problem statement at the top of the README
 
 **Done when:** the repo is pushed with schema, profiling notes and a draft README.
 
@@ -50,7 +49,6 @@
 - [ ] ✍️ `RANK()` categories by revenue and by freight %, and list those that rank high on revenue and badly on freight
 - [ ] ✍️ Calculate month-over-month revenue growth (`LAG`) and a running total (`SUM() OVER`)
 - [ ] ✍️ Compare average review score for late vs on-time orders
-- [ ] ✍️ Calculate the repeat-customer share (using `customer_unique_id`, not `customer_id`)
 - [ ] ✍️ Write a comment above each query stating the question it answers
 - [ ] 🤖 Export each query's results to `results/*.csv`
 
