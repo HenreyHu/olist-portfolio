@@ -9,6 +9,7 @@ data/raw/*
 # python
 __pycache__/
 .venv/
+venv/
 .ipynb_checkpoints/
 
 # os / editor
