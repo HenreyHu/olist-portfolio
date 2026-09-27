@@ -19,7 +19,7 @@ The stakeholder, the hypotheses and why the question is framed this way are in [
 3. Analyse categories (`sql/03_analysis.sql`)
 
 ## Data issues
-_TBD, see `data_issues_log`._
+Full log in `data_issues_log` (built by `sql/02_cleaning.sql`) and written up in [docs/data_issues.md](docs/data_issues.md). Highlights: 610 products with no category + 13 with an untranslated one were bucketed as `unknown`; 8 orders are marked `delivered` but have no delivery date and can't be scored for lateness; reconciling order totals against payments left only 24 orders (out of ~99k) genuinely unexplained after separating out rounding noise and installment interest.
 
 ## Limitations
 - The dataset has no cost of goods, so freight as a % of price is used in place of margin.
