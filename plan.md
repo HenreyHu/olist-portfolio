@@ -25,21 +25,21 @@ Does late delivery lower review scores?
 - [x] 🤖 Load the CSVs into staging tables (`stg_*`) and save the load script as `sql/01_load_staging.sql`
 - [x] 🤖 Profile every table (row counts, nulls per column, duplicate keys, min/max dates, unmatched foreign keys) → `docs/profiling.md`
 - [x] 🤖 Draw a diagram of how the tables connect (Mermaid) → `docs/erd.md`
-- [ ] ✍️ Read the profiling output and note the 5–10 issues that look most important
-- [ ] ✍️ Write a draft data dictionary: what each table is for, its grain (what one row represents) and its keys
+- [x] ✍️ Read the profiling output and note the 5–10 issues that look most important
+- [x] ✍️ Write a draft data dictionary: what each table is for, its grain (what one row represents) and its keys
 - [x] ✍️ Write a single-sentence problem statement at the top of the README
 
 **Done when:** the repo is pushed with schema, profiling notes and a draft README.
 
 ## Week 2: Cleaning (the SQL core)
 
-- [ ] ✍️ Build the clean layer (`sql/02_cleaning.sql`): cast data types, trim text, and remove duplicate rows
-- [ ] ✍️ Join `product_category_name_translation` to get English category names, and handle categories that have no match
-- [ ] ✍️ Flag impossible rows: delivered before purchase, missing delivery dates, zero or negative prices
-- [ ] ✍️ **Reconciliation:** for each order, compare `SUM(price + freight_value)` against `SUM(payment_value)`
-  - [ ] Group mismatches into installment interest, vouchers and unexplained
-  - [ ] Count them and total their value for each group
-- [ ] ✍️ Create a `data_issues_log` table with columns: issue, table, rows_affected, fix_applied
+- [x] ✍️ Build the clean layer (`sql/02_cleaning.sql`): cast data types, trim text, and remove duplicate rows
+- [x] ✍️ Join `product_category_name_translation` to get English category names, and handle categories that have no match
+- [x] ✍️ Flag impossible rows: delivered before purchase, missing delivery dates, zero or negative prices
+- [x] ✍️ **Reconciliation:** for each order, compare `SUM(price + freight_value)` against `SUM(payment_value)`
+  - [x] Group mismatches into installment interest, vouchers and unexplained
+  - [x] Count them and total their value for each group
+- [x] ✍️ Create a `data_issues_log` table with columns: issue, table, rows_affected, fix_applied
 
 **Done when:** `02_cleaning.sql` runs end to end and the issues log is filled in.
 
