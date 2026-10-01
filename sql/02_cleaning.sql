@@ -1,9 +1,9 @@
 -- Week 2: Clean layer, category translation, impossible-row flags, reconciliation.
 -- Run from repo root: duckdb data/olist.duckdb < sql/02_cleaning.sql
-
 -- ============================================================
 -- Data issues log — created first so every step below can log into it
 -- ============================================================
+DROP TABLE IF EXISTS data_issues_log;
 
 CREATE TABLE IF NOT EXISTS data_issues_log (
     issue         VARCHAR,
@@ -228,7 +228,6 @@ SELECT *,
     CASE
         WHEN ABS(diff) <= 0.10 THEN 'rounding'
         WHEN diff > 0 AND max_installments > 1 THEN 'installment_interest'
-        WHEN diff < 0 AND has_voucher THEN 'voucher'
         ELSE 'unexplained'
     END AS bucket
 FROM mismatches;
