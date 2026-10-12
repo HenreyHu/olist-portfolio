@@ -1,0 +1,5 @@
+action,categories,orders,revenue,freight_spend,freight_pct,late_orders,late_pct
+Promote,8,37610,5718926.31,785542.65,13.7,2628,7.0
+Renegotiate freight,4,28771,3296195.96,674259.15,20.5,1941,6.7
+Deprioritize,2,7529,778767.34,165781.52,21.3,516,6.9
+Fix delivery,1,1248,266853.43,66770.38,25.0,101,8.1

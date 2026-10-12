@@ -1,0 +1,5 @@
+category,orders,revenue,revenue_share_pct,freight_pct,late_pct,avg_delivery_days,avg_review,rank_revenue,rank_freight
+furniture_decor,6258,706237.17,5.4,23.7,7.2,13.0,4.06,6,10
+housewares,5734,614341.62,4.7,23.2,5.4,11.0,4.2,7,11
+telephony,4086,309631.94,2.3,22.4,7.1,12.9,4.05,14,13
+office_furniture,1248,266853.43,2.0,25.0,8.1,20.5,3.65,15,8

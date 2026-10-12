@@ -1,0 +1,7 @@
+slice,delivery,reviews,avg_review
+all reviews,late,6406,2.27
+all reviews,on_time,89681,4.29
+early reviews only,late,4775,1.84
+early reviews only,on_time,344,4.01
+excluding early reviews,late,1631,3.52
+excluding early reviews,on_time,89337,4.29
