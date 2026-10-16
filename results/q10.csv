@@ -1,0 +1,8 @@
+category,action,revenue,freight_pct,gap_pts,freight_now,saving_half,saving_full
+furniture_decor,Renegotiate freight,706237.17,23.7,7.1,167378.0,25071.0,50143.0
+housewares,Renegotiate freight,614341.62,23.2,6.6,142527.0,20273.0,40547.0
+bed_bath_table,Renegotiate freight,1022955.77,19.7,3.1,201522.0,15856.0,31712.0
+office_furniture,Fix delivery,266853.43,25.0,8.4,66713.0,11208.0,22416.0
+garden_tools,Deprioritize,469135.4,20.6,4.0,96642.0,9383.0,18765.0
+telephony,Deprioritize,309631.94,22.4,5.8,69358.0,8979.0,17959.0
+sports_leisure,Renegotiate freight,952661.4,17.1,0.5,162905.0,2382.0,4763.0

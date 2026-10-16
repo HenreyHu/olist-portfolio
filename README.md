@@ -4,13 +4,15 @@ I ranked Olist's product categories by revenue against what they cost to ship an
 
 ## Answer
 
-| 76% | R$3.3M at 20.5% | 48% |
+| 76% | R$3.3M at 20.5% freight | 48% |
 |---|---|---|
-| of revenue comes from the top 15 categories (R$10.1M of R$13.2M) | revenue in 4 big categories (bed/bath/table, sports & leisure, furniture & decor, housewares) that pay 20.5% of price in freight, against 13.7% for the 8 categories to promote | of all late orders fall in just 3 of 20 months (Nov 2017, Feb and Mar 2018) |
+| of revenue comes from the top 15 categories (R$10.1M of R$13.2M) | revenue in 4 big categories (bed/bath/table, sports & leisure, furniture & decor, housewares) where freight costs 20.5% of item price, against 13.7% for the 8 categories to promote | of all late orders fall in just 3 of 20 months (Nov 2017, Feb and Mar 2018) |
 
-The top 15 categories make 76% of revenue. Seven of them carry freight above 16.6% of price (the top-15 median), putting R$4.3M of revenue at high freight cost. Late deliveries average 6.8% of orders and late orders score 2.27 stars against 4.29, but late % is 5–8% in every top-15 category and spikes by month instead, so the main levers are **freight terms in four categories** and **delivery capacity in the peak months**, not a category-by-category delivery fix. The one delivery exception is office furniture (20.5 days on average, others 11–13.6).
+The top 15 categories make 76% of revenue. Seven of them carry freight above 16.6% of price (the top-15 median), holding R$4.3M of revenue. Four of the seven are big enough to renegotiate (R$3.3M); the other three are garden tools and telephony (smaller, so deprioritized) and office furniture (a delivery problem instead). A late order is one delivered after the date Olist promised the customer. 6.8% of orders are late, and late orders score 2.27 stars against 4.29 (a correlation, not proof that lateness causes the low score). Late % is 5–8% in every top-15 category but spikes by month, so the main levers are **freight terms in four categories** and **delivery capacity in the peak months**. Bringing the four categories' freight down to the top-15 median would cut about R$127K of freight on the same orders (a scenario, not a forecast). The one delivery exception is office furniture (20.5 days on average, others 11–13.6).
 
 ![Revenue vs freight % for the top 15 categories](charts/main_revenue_vs_freight.png)
+
+Chart key: **Promote** = low freight; **Renegotiate freight** = high freight and high revenue; **Deprioritize** = high freight, lower revenue; **Fix delivery** = slow delivery (office furniture only). "High" means above the top-15 median.
 
 Currency is Brazilian reais (R$). Period: orders placed Jan 2017 to Aug 2018, delivered orders only (96,203 orders).
 
@@ -21,7 +23,7 @@ Full reasoning, next steps and missing data are in [docs/act.md](docs/act.md).
 | # | Action | Owner | Size | Confidence |
 |---|---|---|---|---|
 | 1 | **Renegotiate freight terms** for bed/bath/table, sports & leisure, furniture & decor, housewares | Ops / seller management, with finance | R$3.30M revenue (33% of top 15), R$674K freight at 20.5% of price | Medium-low: no carrier cost data, and bulky goods have a physical freight floor |
-| 2 | **Fix delivery:** add capacity or tighter seller promises before Nov and Feb–Mar peaks; investigate office furniture | Ops / logistics | 3,159 late orders in 3 months (48% of all late orders); office furniture R$267K, 20.5 days, 3.65 stars | Medium on timing, low on cause: Nov 2017 follows a volume jump, Feb–Mar 2018 do not |
+| 2 | **Fix delivery:** add capacity or tighter seller promises before Nov and Feb–Mar peaks; investigate office furniture | Ops / logistics | Peak months: 3,158 late orders in Nov 2017, Feb and Mar 2018 (48% of all late orders). Separately, office furniture: R$267K, 20.5 days, 3.65 stars | Medium on timing, low on cause: Nov 2017 follows a volume jump, Feb–Mar 2018 do not |
 | 3 | **Promote** the 8 low-freight categories, led by watches & gifts (8.4% freight) and health & beauty; hold promotion of garden tools and telephony until freight improves | Marketing / category management, with finance | R$5.72M revenue (57% of top 15) at 13.7% freight; held back: R$0.78M at 21.3% | Low-medium: freight % stands in for margin, true margin is unknown |
 
 **Impact scenario (not a forecast).** If the four renegotiation categories' freight fell from 20.5% to the top-15 median of 16.6% on the same orders, freight would be about **R$127K lower** (about R$64K if only half the gap closed). Review-score effects are correlation, not proof of cause: score falls from 4.29 on time to 3.29, 2.11 and 1.70 as lateness grows (below), but late orders may differ in other ways too.
@@ -44,7 +46,7 @@ Which product categories bring in the most revenue but lose the most to freight 
 2. Clean the data and reconcile order totals against payments (`sql/02_cleaning.sql`)
 3. Analyse categories (`sql/03a_views.sql`, `sql/03_analysis.sql`). Each top-15 category gets one action label from a written rule: slow delivery = Fix delivery; high freight and high revenue = Renegotiate freight; high freight and low revenue = Deprioritize; everything else = Promote. "High" means above the top-15 median (rule in `sql/03a_views.sql`)
 
-Every number above traces to a query in `sql/03_analysis.sql` and a file in `results/` (`q1.csv` to `q9.csv`). Two derived tables, `q10_freight_scenario.csv` and `q11_peak_months.csv`, are arithmetic on those results made by `scripts/derive_scenarios.py`. Week 3 findings, query by query: [docs/findings.md](docs/findings.md).
+Every number above traces to a query in `sql/03_analysis.sql` and a file in `results/` (`q1.csv` to `q11.csv`). Q10 is the freight scenario and Q11 the peak-month count. Week 3 findings, query by query: [docs/findings.md](docs/findings.md).
 
 ## Data issues and the late-delivery decisions
 
@@ -70,6 +72,5 @@ pip install -r requirements.txt
 python scripts/setup_data.py        # downloads the CSVs (no Kaggle token needed) and builds data/olist.duckdb
 python scripts/profile.py           # writes docs/profiling.md
 python scripts/run_analysis.py      # runs sql/03_analysis.sql, writes results/q*.csv
-python scripts/derive_scenarios.py  # writes results/q10_freight_scenario.csv and q11_peak_months.csv
 python scripts/make_charts.py       # writes charts/*.png
 ```

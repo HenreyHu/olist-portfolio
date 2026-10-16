@@ -128,3 +128,49 @@ FROM (
 )
 GROUP BY slice, delivery
 ORDER BY slice, delivery;
+
+-- Q10: If each above-median freight category fell to the top-15 median freight %, how much freight would be saved on the same orders?
+-- Scenario, not a forecast. Half gap = half the distance to the median. Revenue x freight % stands in for freight spend.
+WITH m AS (
+    SELECT MEDIAN(freight_pct) AS med FROM v_category_action
+)
+SELECT
+    a.category,
+    a.action,
+    a.revenue,
+    a.freight_pct,
+    ROUND(a.freight_pct - m.med, 1)                       AS gap_pts,
+    ROUND(a.revenue * a.freight_pct / 100, 0)             AS freight_now,
+    ROUND(a.revenue * (a.freight_pct - m.med) / 200, 0)   AS saving_half,
+    ROUND(a.revenue * (a.freight_pct - m.med) / 100, 0)   AS saving_full
+FROM v_category_action a
+CROSS JOIN m
+WHERE a.freight_pct > m.med
+ORDER BY saving_full DESC;
+
+-- Q11: How many late orders sit in the spike months, and how many are above a normal month?
+-- Spike month = late % above 10. Baseline = median late % of the other months.
+WITH monthly AS (
+    SELECT
+        DATE_TRUNC('month', purchase_date) AS month,
+        COUNT(*)                           AS orders,
+        SUM(is_late)                       AS late_orders,
+        100.0 * AVG(is_late)               AS late_pct
+    FROM v_order_delivery
+    GROUP BY 1
+),
+base AS (
+    SELECT MEDIAN(late_pct) AS baseline_pct FROM monthly WHERE late_pct <= 10
+)
+SELECT
+    COUNT(*)                                                                    AS months,
+    COUNT(*) FILTER (WHERE m.late_pct > 10)                                     AS spike_months,
+    SUM(m.orders)      FILTER (WHERE m.late_pct > 10)                           AS spike_orders,
+    SUM(m.late_orders) FILTER (WHERE m.late_pct > 10)                           AS spike_late_orders,
+    SUM(m.late_orders)                                                          AS total_late_orders,
+    ROUND(100.0 * SUM(m.late_orders) FILTER (WHERE m.late_pct > 10) / SUM(m.late_orders), 1) AS spike_share_pct,
+    ROUND(b.baseline_pct, 1)                                                    AS baseline_pct,
+    ROUND(SUM(m.late_orders - m.orders * b.baseline_pct / 100) FILTER (WHERE m.late_pct > 10), 0) AS excess_late_orders
+FROM monthly m
+CROSS JOIN base b
+GROUP BY b.baseline_pct;

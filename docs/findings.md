@@ -16,7 +16,7 @@ Scope: delivered orders purchased Jan 2017 to Aug 2018 (96,203 orders). Late = d
 
 **Q7 - Action labels (top 15 categories).** Rule: high freight = above the median freight % of the 15, high revenue = at or above their median revenue, slow = delivery days above 1.25 x the median. Promote (8): health & beauty, watches & gifts, computers & accessories, cool stuff, auto, toys, baby, perfumery. Renegotiate freight (4): bed/bath/table, sports & leisure, furniture & decor, housewares. Deprioritize (2): garden tools, telephony. Fix delivery (1): office furniture.
 
-**Q8 - Exposure.** Of $10.06M revenue in the top 15: Promote $5.72M (56.8%, freight 13.7%), Renegotiate freight $3.30M (32.8%, freight $674K at 20.5% of price), Deprioritize $0.78M (7.7%, freight 21.3%), Fix delivery $0.27M (2.7%, freight 25.0%, 8.1% late). The Renegotiate group is where freight terms matter most.
+**Q8 - Exposure.** Of R$10.06M revenue in the top 15: Promote R$5.72M (56.8%, freight 13.7%), Renegotiate freight R$3.30M (32.8%, freight R$674K at 20.5% of price), Deprioritize R$0.78M (7.7%, freight 21.3%), Fix delivery R$0.27M (2.7%, freight 25.0%, 8.1% late). The Renegotiate group is where freight terms matter most.
 
 **Q9 - Review timing.** 5,119 reviews were written before the delivered date, 4,775 of them on late orders (about 75% of all late-order reviews, averaging 1.84 stars). Excluding them, late orders average 3.52 against 4.29 on time, so the gap is about 0.8 stars rather than 2.0. Report both: early reviews likely reflect customers complaining while still waiting, so lateness still hurts, but the 2-star headline overstates it.
 

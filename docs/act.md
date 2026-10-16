@@ -1,6 +1,6 @@
 # Act: what Olist should do
 
-Sources: `results/q1.csv` to `q11_peak_months.csv`. Currency is Brazilian reais (R$). Top 15 categories = R$10.06M, 76% of R$13.2M total revenue.
+Sources: `results/q1.csv` to `q11.csv`. Currency is Brazilian reais (R$). Top 15 categories = R$10.06M, 76% of R$13.2M total revenue.
 
 ## Recommendations
 
@@ -11,7 +11,7 @@ Sources: `results/q1.csv` to `q11_peak_months.csv`. Currency is Brazilian reais 
 
 **2. Fix delivery where it is concentrated: peak months and office furniture.**
 - Owner: ops / logistics.
-- Size: Nov 2017, Feb 2018 and Mar 2018 hold 3,159 late orders, 48% of all 6,544 (Q5). About 2,283 of them are above what a normal month (4.2% late) would produce. Office furniture: R$267K, 1,248 orders, 20.5 days on average (others 11.0 to 13.6), 3.65 stars, 8.1% late (Q7).
+- Size: Nov 2017, Feb 2018 and Mar 2018 hold 3,158 late orders, 48% of all 6,531 (Q11). About 2,287 of them are above what a normal month (4.2% late) would produce. Office furniture: R$267K, 1,248 orders, 20.5 days on average (others 11.0 to 13.6), 3.65 stars, 8.1% late (Q7).
 - Confidence: medium on the timing, low on the cause. Nov 2017 follows a volume jump (7,288 orders vs 4,478 in Oct), but Feb and Mar 2018 do not (6,555 and 7,003 vs 7,069 in Jan), so volume alone does not explain it. Seller and carrier data would.
 
 **3. Promote the 8 low-freight categories; hold garden tools and telephony.**
@@ -21,7 +21,7 @@ Sources: `results/q1.csv` to `q11_peak_months.csv`. Currency is Brazilian reais 
 
 ## Impact scenario (not a forecast)
 
-If each above-median category's freight % fell to the top-15 median of 16.6% on the same orders (`results/q10_freight_scenario.csv`):
+If each above-median category's freight % fell to the top-15 median of 16.6% on the same orders (Q10, `results/q10.csv`):
 
 | Scope | Half the gap closed | Full gap closed |
 |---|---:|---:|
