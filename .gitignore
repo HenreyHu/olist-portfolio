@@ -17,3 +17,6 @@ venv/
 Thumbs.db
 .vscode/
 .idea/
+
+# tableau temp files
+~*.twbr
