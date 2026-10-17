@@ -79,17 +79,6 @@ raw CSVs -> stg_* tables -> clean_* tables -> v_* views -> results/q*.csv -> cha
 
 **The action-label rule.** Each top-15 category gets one label from a written rule, not from judgment: slow delivery = Fix delivery; high freight and high revenue = Renegotiate freight; high freight and low revenue = Deprioritize; everything else = Promote. "High" means above the top-15 median (the rule is in `sql/03a_views.sql`).
 
-**Folder map**
-
-```
-sql/        01 load, 02 cleaning, 03a views, 03 analysis queries
-scripts/    setup, profiling, running the queries, making the charts
-results/    one CSV per query
-charts/     the three charts used above
-tableau/    the Tableau Public workbook
-docs/       ask, profiling, ERD, data dictionary, data issues, findings
-```
-
 ## Challenges and what I learned
 
 Most of the work was not the queries. It was finding out where a number could mislead me, and these are the problems that mattered.
