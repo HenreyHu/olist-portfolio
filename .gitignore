@@ -20,3 +20,6 @@ Thumbs.db
 
 # tableau temp files
 ~*.twbr
+
+# files waiting to be deleted
+_to_delete/
