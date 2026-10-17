@@ -4,6 +4,21 @@ I ranked Olist's product categories by revenue against what they cost to ship an
 
 **Interactive dashboard:** [Tableau Public](https://public.tableau.com/app/profile/henrey.hu/viz/OlistRevenuevsFreightDeliveryPerformance/OlistDashboard). A copy of the workbook is in `tableau/`.
 
+---
+
+## Contents
+
+- [Answer](#answer)
+- [Recommendations](#recommendations)
+- [Supporting question: does late delivery lower review scores?](#supporting-question-does-late-delivery-lower-review-scores)
+- [About this project](#about-this-project)
+- [How I structured it](#how-i-structured-it)
+- [Challenges and what I learned](#challenges-and-what-i-learned)
+- [Limitations](#limitations)
+- [Data issues and the late-delivery decisions](#data-issues-and-the-late-delivery-decisions)
+- [Reproduce](#reproduce)
+- [Credits](#credits)
+
 ## Answer
 
 | 76% | R$3.3M at 20.5% freight | 48% |
@@ -126,3 +141,7 @@ python scripts/make_charts.py                     # writes charts/*.png from res
 python scripts/profile.py                         # optional: writes docs/profiling.md
 ```
 Each step reads the output of the one before it, so run them in this order. The download is about 45 MB and the full run takes a few minutes. I rebuilt every result and chart from scratch following these steps and got the same files.
+
+## Credits
+
+Data: the Brazilian E-Commerce Public Dataset by Olist, from Kaggle.
